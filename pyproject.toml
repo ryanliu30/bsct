@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bsct"
+description = "Bond Smoothness Characterization Test"
+version = "0.0.0"
+authors = [
+    { name = "Ryan Liu", email = "liuryan30@berkeley.edu" }
+]
+dependencies = [
+    "ase",
+    "matplotlib",
+    "numpy",
+    "tqdm",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["F", "E", "W", "I", "D"]
+ignore = ["D400", "D300", "D212", "D205", "D203", "D200", "D105", "D100", "D101", "D103", "D107", "E712", "E701", "E741"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
